@@ -39,10 +39,10 @@ Scenario: Create a Product
     And I should see "Tools" in the "Category" dropdown
     And I should see "34.95" in the "Price" field
 
-Scenario: Reading a Product
-    When I vist the "Home Page"
+Scenario: Read a Product
+    When I visit the "Home Page"
     And I set the "Name" to "Hat"
-    And I Press the "Search" button
+    And I press the "Search" button
     Then I should see the message "Success"
     When I copy the "Id" field
     And I press the "Clear" button
@@ -55,7 +55,7 @@ Scenario: Reading a Product
     And I should see "Cloths" in the "Category" dropdown
     And I should see "59.95" in the "Price" field
 
-Scenario: Updating a Product
+Scenario: Update a Product
     When I visit the "Home Page"
     And I set the "Name" to "Hat"
     And I press the "Search" button
@@ -74,9 +74,9 @@ Scenario: Updating a Product
     And I press the "Search" button
     Then I should see the message "Success"
     And I should see "Fedora" in the results
-    And I should not see "Hat in the results
+    And I should not see "Hat" in the results
 
-Scenario: Deleting a Product
+Scenario: Delete a Product
     When I visit the "Home Page"
     And I set the "Name" to "Hat"
     And I press the "Search" button
@@ -85,7 +85,6 @@ Scenario: Deleting a Product
     When I copy the "Id" field
     And I press the "Clear" button
     And I paste the "Id" field
-    And I press the "Id" field
     And I press the "Delete" button
     Then I should see the message "Product has been Deleted!"
     When I press the "Clear" button
@@ -103,7 +102,7 @@ Scenario: List all products
     And I should see "Big Mac" in the results
     And I should see "Sheets" in the results
 
-Scenario: Search a Product based on Category
+Scenario: Search by category
     When I visit the "Home Page"
     And I press the "Clear" button
     And I select "Food" in the "Category" dropdown
@@ -114,7 +113,7 @@ Scenario: Search a Product based on Category
     And I should not see "Shoes" in the results
     And I should not see "Sheets" in the results
 
-Scenario: Search a Product based on Availability
+Scenario: Search by available
     When I visit the "Home Page"
     And I press the "Clear" button
     And I select "True" in the "Available" dropdown
